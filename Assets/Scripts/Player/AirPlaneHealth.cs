@@ -3,6 +3,7 @@
 public class AirPlaneHealth : MonoBehaviour, IDamagable
 {
     [SerializeField] float m_maxHeathAmout;
+    [SerializeField] GameObject m_destroyEffect;
 
     float m_healthAmout;
 
@@ -15,7 +16,13 @@ public class AirPlaneHealth : MonoBehaviour, IDamagable
     {
         m_healthAmout -= m_damageAmout;
 
-        if (m_healthAmout <= 0) { Destroy(gameObject); }
+        if (m_healthAmout <= 0) { Die(); }
     }
 
+    public void Die()
+    {
+        Instantiate(m_destroyEffect, transform.position, Quaternion.identity);
+
+        Destroy(gameObject);
+    }
 }

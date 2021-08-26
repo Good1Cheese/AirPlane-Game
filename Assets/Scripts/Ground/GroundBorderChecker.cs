@@ -3,7 +3,7 @@ using Zenject;
 
 public class GroundBorderChecker : MonoBehaviour
 {
-    [Inject] readonly GameObject m_playerGameObject;
+    [SerializeField] GameObject m_playerGameObject;
     [Inject] readonly GroundResetter m_groundMove;
 
     void OnTriggerEnter(Collider other)

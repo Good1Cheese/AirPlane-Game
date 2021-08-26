@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53aae04cce40dda46ae1dae767d0033d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bulletSpeed: 20
+  m_bulletSpeed: 35
   m_directionFlyMultiplier: 1
 --- !u!114 &-5804540026998559936
 MonoBehaviour:
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff305063c27141469fdab389e549e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_rangeOfFlight: 25
+  m_rangeOfFlight: 50
   m_bulletRangeMultiplier: 1
 --- !u!114 &3809705023548477713
 MonoBehaviour:
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59052e7a910cd0439227580c4da13b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_damageAmout: 10
+  m_damageAmout: 1
 --- !u!65 &7173103760733199394
 BoxCollider:
   m_ObjectHideFlags: 0
