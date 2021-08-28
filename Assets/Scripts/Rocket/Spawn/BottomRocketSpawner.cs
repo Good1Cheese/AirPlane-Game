@@ -2,7 +2,7 @@
 {
     protected override void GetSpawnPoint()
     {
-        m_rocketSpawnPosition = m_playerTransform.position;
-        m_rocketSpawnPosition.z = m_playerBorder.position.z;
+        m_objectSpawnPosition = m_playerTransform.position;
+        m_objectSpawnPosition.z = m_playerBorder.position.z;
     }
 }

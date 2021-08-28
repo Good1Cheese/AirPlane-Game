@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemySpawner : WordObjectSpawner
+public class WallObstacleSpawner : WordObjectSpawner
 {
     public override void OnObjectSpawned()
     {

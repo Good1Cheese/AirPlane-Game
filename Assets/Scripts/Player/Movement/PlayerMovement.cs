@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class AirPlaneMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float m_movementSpeed;
 

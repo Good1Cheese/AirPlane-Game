@@ -5,6 +5,7 @@ using Zenject;
 public abstract class WordObjectSpawner : MonoBehaviour
 {
     [SerializeField] protected GameObject m_objectPrefab;
+    [SerializeField] protected Vector3 m_spawnOffset;
     [SerializeField] protected Transform m_playerBorder;
 
     [SerializeField] protected int m_minTimeForSpawn;
@@ -16,7 +17,7 @@ public abstract class WordObjectSpawner : MonoBehaviour
 
     protected bool m_isSpawnDelayGoing;
     protected WaitForSeconds m_timeoutAfterSpawn;
-    protected Vector3 m_rocketSpawnPosition = new Vector3();
+    protected Vector3 m_objectSpawnPosition = new Vector3();
 
     void Start()
     {
@@ -36,11 +37,12 @@ public abstract class WordObjectSpawner : MonoBehaviour
 
     protected virtual IEnumerator SpawnObjectCoroutine()
     {
-        m_rocketSpawnPosition = m_playerTransform.position;
-        m_rocketSpawnPosition.z = m_playerBorder.position.z;
+        m_objectSpawnPosition = m_playerTransform.position;
+        m_objectSpawnPosition.z = m_playerBorder.position.z;
+        m_objectSpawnPosition += m_spawnOffset;
 
         OnObjectSpawned();
-        Instantiate(m_objectPrefab, m_rocketSpawnPosition, m_objectPrefab.transform.rotation);
+        Instantiate(m_objectPrefab, m_objectSpawnPosition, m_objectPrefab.transform.rotation);
 
         yield return m_timeoutAfterSpawn;
         m_isSpawnDelayGoing = false;

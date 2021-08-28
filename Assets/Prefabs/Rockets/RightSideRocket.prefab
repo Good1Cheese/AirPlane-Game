@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3041607556725388866}
   - component: {fileID: 1523947816773480793}
   - component: {fileID: 4725300918134096667}
-  - component: {fileID: -2798358279432049534}
+  - component: {fileID: -2732178035513199811}
   m_Layer: 0
-  m_Name: Rocket 1
+  m_Name: RightSideRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3041607556725388867}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
@@ -35,7 +35,7 @@ Transform:
   - {fileID: 3323789294442748200}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &1523947816773480793
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7def2707857104cb25af1951391dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2798358279432049534
+--- !u!114 &-2732178035513199811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,10 +70,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3041607556725388867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 168f11c5eab37844c8f4c05da6ef5d5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 53aae04cce40dda46ae1dae767d0033d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bulletSpeed: 20
+  m_speed: 21
 --- !u!1 &3978883218991550241
 GameObject:
   m_ObjectHideFlags: 0

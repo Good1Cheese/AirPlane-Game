@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3041607556725388866}
   - component: {fileID: 1523947816773480793}
   - component: {fileID: 4725300918134096667}
-  - component: {fileID: 8639267061453267712}
+  - component: {fileID: 2035039755847139371}
   m_Layer: 0
-  m_Name: Rocket
+  m_Name: ForwardSideRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7def2707857104cb25af1951391dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8639267061453267712
+--- !u!114 &2035039755847139371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,11 +70,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3041607556725388867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a51df0da772553548ba67ec746e6148c, type: 3}
+  m_Script: {fileID: 11500000, guid: 53aae04cce40dda46ae1dae767d0033d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bulletSpeed: 20
-  m_directionFlyMultiplier: 1
+  m_speed: 21
 --- !u!1 &3978883218991550241
 GameObject:
   m_ObjectHideFlags: 0
