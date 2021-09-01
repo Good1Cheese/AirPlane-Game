@@ -6,7 +6,7 @@ public class BulletCleaner : MonoBehaviour
     [SerializeField] float m_rangeOfFlight;
     [SerializeField] float m_bulletRangeMultiplier;
 
-    Func<bool> m_didBulletReachStopPoint;
+    Predicate<float> m_didBulletReachStopPoint;
 
     void Start()
     {
@@ -14,15 +14,15 @@ public class BulletCleaner : MonoBehaviour
 
         if (m_bulletRangeMultiplier > 0)
         {
-            m_didBulletReachStopPoint = delegate () { return transform.position.z >= m_rangeOfFlight; };
+            m_didBulletReachStopPoint = delegate (float position) { return position >= m_rangeOfFlight; };
             return;
         }
-        m_didBulletReachStopPoint = delegate () { return transform.position.z <= m_rangeOfFlight; };
+        m_didBulletReachStopPoint = delegate (float position) { return position <= m_rangeOfFlight; };
     }
 
     void Update()
     {
-        if (m_didBulletReachStopPoint.Invoke())
+        if (m_didBulletReachStopPoint.Invoke(transform.position.z))
         {
             gameObject.SetActive(false);
         }

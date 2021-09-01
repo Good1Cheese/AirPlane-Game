@@ -12,6 +12,7 @@ public class AirPlaneShooting : MonoBehaviour
 
     void Start()
     {
+        print(m_delayAfterShot);
         m_timeoutAfterShot = new WaitForSeconds(m_delayAfterShot);
     }
 

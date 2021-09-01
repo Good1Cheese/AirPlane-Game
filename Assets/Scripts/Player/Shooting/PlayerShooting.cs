@@ -1,9 +1,22 @@
 using UnityEngine;
+using Zenject;
 
 public class PlayerShooting : AirPlaneShooting
 {
+    [Inject] readonly PauseMenuActivator m_pauseMenuActivator;
+
     [SerializeField] Transform m_firstShootingPoint;
     [SerializeField] Transform m_secondShootingPoint;
+
+    void Awake()
+    {
+        m_pauseMenuActivator.OnPauseMenuActiveStateChanged += SetActiveOrUnActive;
+    }
+
+    void SetActiveOrUnActive()
+    {
+        enabled = !enabled;
+    }
 
     void Update()
     {
@@ -15,6 +28,10 @@ public class PlayerShooting : AirPlaneShooting
             return;
         }
         StartCoroutine(ShootCoroutine(m_secondShootingPoint));
+    }
 
+    void OnDestroy()
+    {
+        m_pauseMenuActivator.OnPauseMenuActiveStateChanged -= SetActiveOrUnActive;
     }
 }

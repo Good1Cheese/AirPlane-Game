@@ -3,13 +3,11 @@ using UnityEngine;
 
 public class BulletDamagable : MonoBehaviour
 {
-    [SerializeField] float m_damageAmout;
-
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.TryGetComponent(out IDamagable damagable))
+        if (collision.gameObject.TryGetComponent(out IBulletHitable damagable))
         {
-            damagable.Damage(m_damageAmout);
+            damagable.Damage();
             gameObject.SetActive(false);
         }
     }

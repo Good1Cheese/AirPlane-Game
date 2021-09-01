@@ -8,7 +8,7 @@ public class SceneTransition : MonoBehaviour
     {
         StartScene, 
         SettinsScene, 
-        PlayScene, 
+        PlayScene,
         DeathScene
     }
 

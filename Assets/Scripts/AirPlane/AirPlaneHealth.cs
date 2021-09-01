@@ -1,28 +1,32 @@
 ﻿using UnityEngine;
 
-public class AirPlaneHealth : MonoBehaviour, IDamagable
+public class AirPlaneHealth : MonoBehaviour, IBulletHitable, IRocketHitable
 {
-    [SerializeField] float m_maxHeathAmout;
-    [SerializeField] GameObject m_destroyEffect;
+    [SerializeField] protected int m_maxHeathAmout;
+    [SerializeField] protected GameObject m_destroyEffect;
 
-    float m_healthAmout;
+    public int HealthAmout { get; set; }
 
-    void Start()
+    void Awake()
     {
-        m_healthAmout = m_maxHeathAmout;    
+        HealthAmout = m_maxHeathAmout;
     }
 
-    public void Damage(float m_damageAmout)
+    public void Damage()
     {
-        m_healthAmout -= m_damageAmout;
+        HealthAmout--;
 
-        if (m_healthAmout <= 0) { Die(); }
+        if (HealthAmout <= 0) { Die(); }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         Instantiate(m_destroyEffect, transform.position, Quaternion.identity);
-
         Destroy(gameObject);
+    }
+
+    public void Hit()
+    {
+        Die();
     }
 }
